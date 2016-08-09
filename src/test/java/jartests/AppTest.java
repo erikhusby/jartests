@@ -39,4 +39,8 @@ public class AppTest
     public void testFailure() {
 	fail ("No success like failure");
     }
+
+    public void testSuccess() {
+	assertTrue( true, "Success");
+    }
 }
