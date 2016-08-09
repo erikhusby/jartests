@@ -41,6 +41,6 @@ public class AppTest
     }
 
     public void testSuccess() {
-	assertTrue( true, "Success");
+	assertTrue( true );
     }
 }
