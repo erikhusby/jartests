@@ -80,9 +80,6 @@
                 <version>${clover.version}</version>
 
                 <configuration>
-                    <cloverDatabase>${mercuryCloverDatabase}</cloverDatabase>
-                    <historyDir>${user.home}/.clover/history/${project.artifactId}</historyDir>
-                    <includesAllSourceRoots>false</includesAllSourceRoots>
                     <targetPercentage>${clover.targetPercentage}</targetPercentage>
                     <flushPolicy>threaded</flushPolicy>
                     <generateHtml>true</generateHtml>
