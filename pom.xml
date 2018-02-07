@@ -80,7 +80,8 @@
                 <version>${clover.version}</version>
 
                 <configuration>
-                    <targetPercentage>${clover.targetPercentage}</targetPercentage>
+                  <targetPercentage>${clover.targetPercentage}</targetPercentage>
+		  <licenseLocation>/prodinfo/releng/clover.license</licenseLocation>
                     <flushPolicy>threaded</flushPolicy>
                     <generateHtml>true</generateHtml>
                     <generateXml>true</generateXml>
