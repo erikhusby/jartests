@@ -43,7 +43,11 @@
                     <groupId>external.atlassian.jgitflow</groupId>
                     <artifactId>jgitflow-maven-plugin</artifactId>
                     <version>1.0-m5.1</version>
-
+<!--
+<groupId>com.amashchenko.maven.plugin</groupId>
+    <artifactId>gitflow-maven-plugin</artifactId>
+    <version>1.9.0</version>
+-->
                 <configuration>
                     <!-- see goals wiki page for configuration options -->
                       <flowInitContext>
@@ -58,7 +62,13 @@
                     <useReleaseProfile>false</useReleaseProfile>
                     <releaseBranchVersionSuffix>RC</releaseBranchVersionSuffix>
                 </configuration>
-
+                <dependencies>
+                  <dependency>
+                    <groupId>com.jcraft</groupId>
+                    <artifactId>jsch</artifactId>
+                    <version>0.1.54</version>
+                  </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>
