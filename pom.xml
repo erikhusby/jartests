@@ -39,36 +39,30 @@
     <build>
         <plugins>
             <plugin>
-                <!-- http://mvnrepository.com/artifact/external.atlassian.jgitflow/jgitflow-maven-plugin -->
-                    <groupId>external.atlassian.jgitflow</groupId>
-                    <artifactId>jgitflow-maven-plugin</artifactId>
-                    <version>1.0-m5.1</version>
-<!--
-<groupId>com.amashchenko.maven.plugin</groupId>
-    <artifactId>gitflow-maven-plugin</artifactId>
-    <version>1.9.0</version>
--->
+                <groupId>com.amashchenko.maven.plugin</groupId>
+                <artifactId>gitflow-maven-plugin</artifactId>
+                <version>1.12.0</version>
                 <configuration>
-                    <!-- see goals wiki page for configuration options -->
-                      <flowInitContext>
-                         <masterBranchName>production</masterBranchName>
-                         <developBranchName>master</developBranchName>
-                    </flowInitContext>
-                    <allowUntracked>true</allowUntracked>
-                    <pushFeatures>true</pushFeatures>
-                    <noFeatureBuild>true</noFeatureBuild>
-                    <pushReleases>true</pushReleases>
-                    <enableFeatureVersions>true</enableFeatureVersions>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <releaseBranchVersionSuffix>RC</releaseBranchVersionSuffix>
+                    <verbose>true</verbose>
+                    <!-- Do not run the unit tests during the finish goals -->
+                    <skipTestProject>true</skipTestProject>
+                    <!-- When starting the release, update the development version at the start -->
+                    <commitDevelopmentVersionAtStart>true</commitDevelopmentVersionAtStart>
+                    <!-- The names of the branches being used -->
+                    <gitFlowConfig>
+                        <productionBranch>production</productionBranch>
+                        <developmentBranch>master</developmentBranch>
+                    </gitFlowConfig>
+                    <!-- Allow snapshots at the start of the release -->
+                    <allowSnapshots>true</allowSnapshots>
+                    <!-- Keep the SNAPSHOT prefix in the version until the release is finished -->
+                    <useSnapshotInRelease>true</useSnapshotInRelease>
+                    <!-- Keep the SNAPSHOT prefix in the version until the hot fix is finished -->
+                    <useSnapshotInHotfix>true</useSnapshotInHotfix>
+                    <!-- Push the new created branches to the remote upon start of the release and
+                     the modified development and production branches at the end of the release. -->
+                    <pushRemote>true</pushRemote>
                 </configuration>
-                <dependencies>
-                  <dependency>
-                    <groupId>com.jcraft</groupId>
-                    <artifactId>jsch</artifactId>
-                    <version>0.1.54</version>
-                  </dependency>
-                </dependencies>
             </plugin>
 
             <plugin>
